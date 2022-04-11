@@ -76,8 +76,8 @@ namespace ReversiRestApi.Controllers
             return Ok(spel);
         }
 
-        [HttpPut("/api/Spel/{id}/zet")]
-        public async Task<ActionResult<Spel>> DoeZet(string id, [FromQuery] string token, [FromQuery] int x, [FromQuery] int y)
+        [HttpPost("/api/Spel/{id}/zet")]
+        public async Task<ActionResult<Spel>> DoeZet(string id, [FromForm] string token, [FromForm] int x, [FromForm] int y)
         {
             if (token == null) return Unauthorized();
 
