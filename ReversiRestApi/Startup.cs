@@ -37,7 +37,6 @@ namespace ReversiRestApi
                 }
             );
 
-            //services.AddDbContext<SpelContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ReversiDatabase")));
             services.AddDbContext<SpelContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ReversiDatabase")), ServiceLifetime.Transient);
             services.AddTransient<ISpelRepository, SpelAccessLayer>();
             services.AddControllers();
